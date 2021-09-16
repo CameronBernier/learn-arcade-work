@@ -36,6 +36,11 @@ arcade.draw_circle_outline(190, 190, 12, (240, 255, 255))
 # Sand floor
 arcade.draw_lrtb_rectangle_filled(0, 600, 60, 0, (250, 214, 165))
 
+# Rocks
+arcade.draw_ellipse_filled(540, 50, 100, 50, arcade.csscolor.GREY)
+arcade.draw_ellipse_filled(450, 40, 80, 30, arcade.csscolor.GREY)
+
+
 arcade.finish_render()
 
 arcade.run()
