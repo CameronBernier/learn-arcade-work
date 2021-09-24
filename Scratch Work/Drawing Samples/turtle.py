@@ -23,6 +23,12 @@ arcade.draw_circle_outline(299, 299, 100, arcade.csscolor.SADDLE_BROWN)
 arcade.draw_circle_filled(299, 299, 80, (207, 170, 116))
 arcade.draw_circle_outline(299, 299, 80, arcade.csscolor.SADDLE_BROWN)
 
+# text
+arcade.draw_text("Stephanie",
+                 225, 100,
+                 (32, 178, 170), 24)
+
+
 arcade.finish_render()
 
 arcade.run()
