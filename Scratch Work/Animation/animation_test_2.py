@@ -11,11 +11,22 @@ WHITE = (255, 255, 255)
 
 BLACK = (0, 0, 0)
 
+# water
+WATER = (162, 210, 219, 100)
+
+arcade.draw_ellipse_filled(400, 150, 300, 60, WATER)
+arcade.draw_ellipse_outline(400, 150, 200, 40,(143, 176, 201, 150))
+arcade.draw_ellipse_outline(400, 150, 100, 20, (143, 176, 201, 150))
+arcade.draw_ellipse_outline(400, 150, 50, 10, (143, 176, 201, 150))
+
 # crane legs
 
 arcade.draw_line(390, 300, 400,  150, BLACK, 6)
 arcade.draw_ellipse_filled(395, 450 / 2, 22, 12, BLACK, tilt_angle=85)
-arcade.draw_line(407, 153, 390, 145, BLACK, 4)
+
+arcade.draw_line(380, 300, 370, 235, BLACK, 6)
+arcade.draw_line(370, 230, 420, 180, BLACK, 6)
+arcade.draw_ellipse_filled(370, 230, 22, 12, BLACK, tilt_angle=45)
 
 # crane beak
 
