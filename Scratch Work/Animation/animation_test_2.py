@@ -4,7 +4,7 @@ SCROLL_BEIGE = (219, 209, 175)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 WATER = (162, 210, 219, 100)
-RIPPLE_COLOR = (143, 176, 201, 150)
+RIPPLE_COLOR = (143, 176, 201, 200)
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 800
@@ -12,11 +12,13 @@ SCREEN_HEIGHT = 800
 
 def water():
     """Base water"""
-    arcade.draw_ellipse_filled(400, 150, 300, 60, WATER)
+    arcade.draw_ellipse_filled(400, 150, 450, 60, WATER)
 
 
 def water_ripples(x, y):
-    arcade.draw_ellipse_outline(400, 150, 50 + x, 10 + y, RIPPLE_COLOR)
+    arcade.draw_ellipse_outline(400, 150, 60 + x, 18 + y, RIPPLE_COLOR)
+    arcade.draw_ellipse_outline(400, 150, 20 + x, 12 + y, RIPPLE_COLOR)
+    arcade.draw_ellipse_outline(400, 150, 100 + x, 24 + y, RIPPLE_COLOR)
 
 
 def crane():
@@ -52,14 +54,20 @@ def on_draw(delta_time):
     arcade.start_render()
 
     water()
-    water_ripples(0, 0)
+    water_ripples(on_draw.water_ripples_x, 0)
     crane()
+
+    on_draw.water_ripples_x += 1
+
+
+on_draw.water_ripples_x = 5
 
 
 def main():
     arcade.open_window(SCREEN_WIDTH, SCREEN_HEIGHT, "Animation Base")
     arcade.set_background_color(SCROLL_BEIGE)
 
+    # Call on_draw every 60th of a second.
     arcade.schedule(on_draw, 1/60)
     arcade.run()
 
