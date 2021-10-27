@@ -53,18 +53,18 @@ def on_draw(delta_time):
     """Draw everything"""
     arcade.start_render()
     water()
-    water_ripples(on_draw.water_ripples_x, 0)
+    water_ripples(on_draw.water_ripples_x, on_draw.water_ripples_y)
     # 0 is replaced by "on_draw.water_ripples_y"
     crane()
-    on_draw.water_ripples_x += 1
-    # Add "on_draw.water_ripples_y += 1"
-    if on_draw.water_ripples_x == 350:
-        # add after 350 "and on_draw.water_ripples_y == 100"
-        arcade.finish_render()
+    on_draw.water_ripples_x += 2
+    on_draw.water_ripples_y += 0.25
+    if on_draw.water_ripples_x >= 290 and on_draw.water_ripples_y >= 40:
+        arcade.pause(3)
+        arcade.exit()
 
 
 on_draw.water_ripples_x = 5
-# on_draw.water_ripples_y = 5
+on_draw.water_ripples_y = 5
 
 
 def main():
