@@ -1,6 +1,7 @@
 print("Welcome to the Quiz Game")
 print("My name is Cameron.")
 
+# a is the number of points
 a = 0
 
 user_name = input("What is your name?")
@@ -60,7 +61,10 @@ elif a == 4:
     print("You scored 80%")
 elif a == 5:
     print("You scored 100%")
+else:
+    print("You failed.")
 
+print("The end.")
 
 
 
