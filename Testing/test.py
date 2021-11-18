@@ -1,5 +1,7 @@
-def number_squared(x, y):
-    result = x ** y
-    return result
+total = 0
 
-number_squared(3, 2)
+for i in range(10):
+	new_number = int(input("Enter a number."))
+	total = total + new_number
+
+print("The total is: ", total)
