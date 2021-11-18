@@ -47,12 +47,12 @@ def draw_section_4():
             x = 905
             y = 5
             if row % 2 == 1:
-                arcade.draw_rectangle_filled(x + 10 * column, y + 10 * row, 5, 5, arcade.color.BLACK)
+                arcade.draw_rectangle_filled(x + 10 * row, y + 10 * column, 5, 5, arcade.color.BLACK)
             if row % 2 == 0:
                 if column % 2 == 0:
-                    arcade.draw_rectangle_filled(x + 10 * column, y + 10 * row, 5, 5, arcade.color.BLACK)
+                    arcade.draw_rectangle_filled(x + 10 * row, y + 10 * column, 5, 5, arcade.color.BLACK)
                 if column % 2 == 1:
-                    arcade.draw_rectangle_filled(x + 10 * column, y + 10 * row, 5, 5, arcade.color.WHITE)
+                    arcade.draw_rectangle_filled(x + 10 * row, y + 10 * column, 5, 5, arcade.color.WHITE)
 
 
 def draw_section_5():
