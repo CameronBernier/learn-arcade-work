@@ -29,7 +29,7 @@ main()
 
 while not done:
     protectors_behind = miles_traveled - protectors_traveled
-    be_swift = random.randrange(6, 10)
+    be_swift = random.randrange(7, 15)
     be_careful = random.randrange(1, 5)
     print("""
     A. Eat some elven bread.
@@ -52,6 +52,7 @@ while not done:
         print("Elven bread rations left: ", bread_rations)
         print("You need", fatigue, "hours of sleep.")
         print("The woodland protectors are ", protectors_behind, "miles behind you.")
+        print("Hunger:", hunger)
 
 # stop and rest for the night
     elif user_input.upper() == "D":
@@ -66,7 +67,7 @@ while not done:
         hunger += 1
         fatigue += random.randrange(5, 8)
         protectors_traveled += random.randrange(5, 7)
-        elven_village = random.randrange(1, 21)
+        elven_village = random.randrange(1, 11)
 
 # move ahead carefully
     elif user_input.upper() == "B":
@@ -75,7 +76,7 @@ while not done:
         hunger += 1
         fatigue += 3
         protectors_traveled += random.randrange(5, 7)
-        elven_village = random.randrange(1, 16)
+        elven_village = random.randrange(1, 6)
 
 # eat elven bread rations
     elif user_input.upper() == "A":
@@ -84,13 +85,14 @@ while not done:
         else:
             bread_rations -= 1
             hunger *= 0
+            print("You are no longer hungry.")
             print("You have", bread_rations, "rations of elven bread left.")
 
     else:
         print("Invalid input; Try again")
 
 # not done check
-    if elven_village == 12:
+    if elven_village == 4:
         fatigue *= 0
         hunger *= 0
         bread_rations = 3
